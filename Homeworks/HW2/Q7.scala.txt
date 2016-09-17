@@ -1,0 +1,16 @@
+object bb {
+  
+  def main(args: Array[String]) : Unit = {
+   val b = 3 
+   val p = 4
+   println(power(b,p))
+    
+    def power(base: Int, exp: Int): BigInt = {
+        def _power(result: BigInt, exp: Int): BigInt = exp match {
+            case 0 => result
+            case _ => _power(result*base, exp-1)
+        }
+        _power(1, exp)
+    }  
+  }
+}

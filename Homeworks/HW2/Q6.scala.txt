@@ -1,0 +1,21 @@
+object Q6 {
+  // the main argument has been defined  
+  def main(args: Array[String]) : Unit = {
+    var y = List(34,56,23,12,1)
+    println(pivotSort(y))    
+    def pivotSort(x1: List[Int]): List[Int] = {
+      // if the length of the string is either 0 or one, it displays that element
+      if (x1.length <= 1) 
+        x1
+      else {
+        // else we take the middle element and compare all the elements smaller than and it and bigget than it and 
+        // then sort it and concat the elements smaller first then the middle element and then the last element. 
+        val x = x1(x1.length / 2)
+        List.concat(
+        pivotSort(x1 filter (x >)),
+        x1 filter (x ==),
+        pivotSort(x1 filter (x <)))
+      }
+  }
+}
+}
